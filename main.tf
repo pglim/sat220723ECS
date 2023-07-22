@@ -15,7 +15,7 @@ data "aws_subnets" "public" {
 module "ecs" {
   source = "terraform-aws-modules/ecs/aws"
 
-  cluster_name = "ecs-tf"   #Change
+  cluster_name = "pglim360-ecs-tf"   #Change
 
   fargate_capacity_providers = {
     FARGATE = {
@@ -26,7 +26,8 @@ module "ecs" {
   }
 
   services = {
-    ecsdemo = { #task def and service name -> #Change
+    #ecsdemo = { #task def and service name -> #Change
+    ecsdemo = { pglim360-ecs-tf
       cpu    = 512
       memory = 1024
 
